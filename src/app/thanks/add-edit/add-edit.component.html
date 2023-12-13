@@ -1,0 +1,30 @@
+<div class="mx-auto p-3">
+  <div class="justify-content-center">
+    <div class="d-flex justify-content-center m-3">
+      <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
+      <label class="btn" for="option5">Thank You</label>
+
+      <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off" disabled>
+      <label class="btn" for="option6">Cool But Pro</label>
+
+      <input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off" disabled>
+      <label class="btn" for="option7">Make an Impact</label>
+
+      <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off" disabled>
+      <label class="btn" for="option8">Adapt & Grow</label>
+    </div>
+    <div class="d-flex justify-content-center">
+      <label for="thankyoumessage" class="form-label"></label>
+      <textarea class="form-control w-50" id="thankyoumessage"
+      placeholder="Be Nice :)"
+      rows="3"></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button (click)="addThankYou()"
+      class="m-3 btn btn-success" Button>
+        POST
+        <i class="bi bi-rocket-takeoff"></i>
+      </button>
+    </div>
+  </div>
+</div>
