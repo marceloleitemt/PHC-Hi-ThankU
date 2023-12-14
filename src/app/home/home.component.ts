@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  constructor(private service:SharedService){}
+
+  thankus:any=[];
+
+  refreshThanks(){
+    this.service.getThanks().subscribe((res)=>{
+      this.thankus=res;
+    })
+  }
+
+  ngOnInit(){
+    this.refreshThanks();
+  }
+
 
 }

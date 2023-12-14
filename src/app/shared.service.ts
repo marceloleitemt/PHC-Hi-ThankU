@@ -1,29 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Firestore, addDoc, collection, collectionData, doc, deleteDoc } from '@angular/fire/firestore'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl="http://localhost:57752/api";
 
-  constructor(private http:HttpClient) { }
+  constructor(private fs:Firestore){ }
 
-  getThanksList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/thankyou');
+  getThanks(){
+    let thanksCollection = collection(this.fs,'ThankUs');
+    return collectionData(thanksCollection,{idField:'id'});
   }
 
-  addThankYou(val:any){
-    return this.http.post(this.APIUrl+'/thankyou', val);
+  addThanks(mensagem:string){
+    let data = {mensagem:mensagem}
+    let thanksCollection = collection(this.fs,'ThankUs');
+    return addDoc(thanksCollection,data);
   }
 
-  updateThankYou(val:any){
-    return this.http.put(this.APIUrl+'/thankyou', val);
-  }
-
-  deleteThankYou(val:any){
-    return this.http.delete(this.APIUrl+'/thankyou'+val);
+  deleteThanks(id:string){
+    let docRef = doc(this.fs,'ThankUs/'+id);
+    return deleteDoc(docRef);
   }
 
 }

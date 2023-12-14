@@ -9,18 +9,18 @@ import {SharedService} from 'src/app/shared.service';
 
 export class ThanksComponent {
 
-  constructor(private service:SharedService) { }
+  constructor(private service:SharedService){}
 
-  GetThanksList:any=[];
+  thankus:any=[];
 
-  ngOnInit(): void{
-    this.refreshThanksList();
+  refreshThankus(){
+    this.service.getThanks().subscribe((res)=>{
+      this.thankus=res;
+    })
   }
 
-  refreshThanksList(){
-    this.service.getThanksList().subscribe(data=>{
-      this.GetThanksList=data;
-    })
+  ngOnInit(){
+    this.refreshThankus();
   }
 
 }

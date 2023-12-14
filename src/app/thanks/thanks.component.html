@@ -5,18 +5,18 @@
 
 
       <div class="min-width-sm max-width-l mb-5 mt-5">
-        <div class="card text-center" *ngFor="let dataItem of GetThanksList">
+        <div class="card text-center" *ngFor="let thanku of thankus">
           <div class="card-header">
-            For Real
+            {{thanku.Tipo}}
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{dataItem.thankyouid}}</h5>
-            <p class="card-text">{{dataItem.thankyoumessage}}</p>
+            <h5 class="card-title">{{thanku.Tipo}}</h5>
+            <p class="card-text">{{thanku.Mensagem}}</p>
           </div>
           <div class="card-footer text-body-secondary">
             <a href="#" class="btn btn-danger">
               <i class="bi bi-heart"></i>
-              Like</a> 10
+              Like</a> {{thanku.Likes}}
           </div>
         </div>
       </div>
