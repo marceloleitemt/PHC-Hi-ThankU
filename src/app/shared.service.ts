@@ -6,24 +6,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl="http://localhost:57752/api";
+readonly APIUrl="http://localhost/Portal/programs/gensel.aspx?cscript=";
 
   constructor(private http:HttpClient) { }
 
   getThanksList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/thankyou');
+    return this.http.get<any>(this.APIUrl+'ApiThankU');
   }
 
   addThankYou(val:any){
-    return this.http.post(this.APIUrl+'/thankyou', val);
+    return this.http.post(this.APIUrl+'/Addthankyou', val);
   }
 
   updateThankYou(val:any){
-    return this.http.put(this.APIUrl+'/thankyou', val);
+    return this.http.put(this.APIUrl+'/Updthankyou', val);
   }
 
   deleteThankYou(val:any){
-    return this.http.delete(this.APIUrl+'/thankyou'+val);
+    return this.http.delete(this.APIUrl+'/Delthankyou'+val);
   }
 
 }

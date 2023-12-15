@@ -1,60 +1,24 @@
-<!-- Tornar componente re-usavel-->
 <div class="mx-auto">
   <div class="d-flex justify-content-center">
     <div class="min-width-sm max-width-l">
-
-
       <div class="min-width-sm max-width-l mb-5 mt-5">
-        <div class="card text-center" *ngFor="let dataItem of GetThanksList">
-          <div class="card-header">
-            For Real
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{dataItem.thankyouid}}</h5>
-            <p class="card-text">{{dataItem.thankyoumessage}}</p>
-          </div>
-          <div class="card-footer text-body-secondary">
-            <a href="#" class="btn btn-danger">
-              <i class="bi bi-heart"></i>
-              Like</a> 10
-          </div>
-        </div>
-      </div>
-<!--
-        <div class="min-width-sm max-width-l mt-5">
+        <div *ngFor="let dataItem of GetThanksList" id={{dataItem.stamp}} class="mb-5">
           <div class="card text-center">
             <div class="card-header">
-              Thank You
+              {{dataItem.deUtil}} para {{dataItem.paraUtil}}
             </div>
             <div class="card-body">
-              <h5 class="card-title">Fulano's PHC</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title"> {{dataItem.tipo}}</h5>
+              <p class="card-text">{{dataItem.mensagem}}</p>
             </div>
             <div class="card-footer text-body-secondary">
               <a href="#" class="btn btn-danger">
                 <i class="bi bi-heart"></i>
-                Like</a> 10
+                Like {{dataItem.likes}}</a>
             </div>
           </div>
         </div>
-
-        <div class="min-width-sm max-width-L mt-5">
-          <div class="card text-center">
-            <div class="card-header">
-              Thank You
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Fulano's PHC</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer text-body-secondary">
-              <a href="#" class="btn btn-danger disabled">
-                <i class="bi bi-heart"></i>
-                Like</a> 6
-            </div>
-        </div>
-      </div> -->
-
+     </div>
     </div>
   </div>
 </div>

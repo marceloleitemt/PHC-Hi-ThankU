@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import {SharedService} from 'src/app/shared.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-thanks',
-  templateUrl: './thanks.component.html',
-  styleUrls: ['./thanks.component.css']
+  selector: 'app-cool',
+  templateUrl: './cool.component.html',
+  styleUrls: ['./cool.component.css']
 })
-
-export class ThanksComponent {
-
+export class CoolComponent {
   constructor(private service:SharedService) { }
 
   GetThanksList:any=[];
@@ -20,8 +18,9 @@ export class ThanksComponent {
   refreshThanksList() {
     this.service.getThanksList().subscribe(data => {
       this.GetThanksList = data.filter(item => {
-          return item.tipo.toLowerCase().includes('thank');
+          return item.tipo.toLowerCase().includes('cool');
       });
     });
   }
+
 }

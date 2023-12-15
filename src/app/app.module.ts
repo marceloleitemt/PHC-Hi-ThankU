@@ -3,9 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// Components
 import { HomeComponent } from './home/home.component';
 import { ThanksComponent } from './thanks/thanks.component';
-import { ShowComponent } from './thanks/show/show.component';
+import { SobreComponent } from './thanks/sobre/sobre.component';
+import { AdaptComponent } from './thanks/adapt/adapt.component';
+import { CoolComponent } from './thanks/cool/cool.component';
+import { ImpactComponent } from './thanks/impact/impact.component';
+
+// Services
 import { SharedService } from './shared.service';
 
 import { HttpClientModule } from '@angular/common/http'
@@ -14,15 +21,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ThanksComponent,
-    ShowComponent,
+    SobreComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdaptComponent,
+    CoolComponent,
+    ImpactComponent
   ],
   imports: [
     BrowserModule,
