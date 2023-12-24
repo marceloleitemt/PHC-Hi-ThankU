@@ -1,0 +1,72 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h4 class="h3 mb-3 fw-normal text-center">Registar-se</h4>
+    <div *ngIf="form.hasError('invalidLogin')" class="alert alert-danger" role="alert">
+      Erro ao Registar-se.
+    </div>
+    <div class="form-floating">
+      <input type="text" id="displayName" formControlName="displayName" class="form-control" placeholder="Nome de Exibição"/>
+      <!-- <div *ngIf="f['displayName']">Como quer ser chamado?</div> -->
+      <label for="displayName">Nome de Exibição</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" formControlName="email" class="form-control" placeholder="nombre@dominio.com"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" #userName required />
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Por favor, digite seu email.</div>
+        <div *ngIf="f['email'].errors['email']">Email inválido</div>
+      </div>
+      <label for="floatingInput">Endereço de Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" id="floatingPassword" formControlName="password" class="form-control"
+        placeholder="Senha" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" #userPassword
+        required />
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Crie uma senha</div>
+        <div *ngIf="f['password'].errors['minlength']">
+          A senha precisa ter pelo menos 6 caracteres
+        </div>
+        <div *ngIf="f['password'].errors['maxlength']">
+          oops, sua senha não pode exceder 40 caracteres
+        </div>
+      </div>
+      <label for="floatingPassword">Senha</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Senha"
+        [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" #userPassword required />
+      <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+        <div *ngIf="f['confirmPassword'].errors['required']">
+          Digite uma senha
+        </div>
+        <div *ngIf="f['confirmPassword'].errors['matching']">
+          Confirmar Senha
+        </div>
+      </div>
+      <label for="floatingPassword">Confirmar Senha</label>
+    </div>
+    <div class="form-group form-check checkbox mb-3 mt-3">
+      <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
+        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
+      <label for="acceptTerms" class="form-check-label">Confio que os HiTech's guardarão bem os meus dados 😎</label>
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        Precisa confiar que não faremos mal uso de seus dados.
+      </div>
+    </div>
+    <button class="w-100 btn btn-lg btn-success mb-2" type="submit" value="Log in"><i class="bi bi-person-fill-up"></i> Criar Conta</button>
+    <!-- <button class="w-100 btn btn-lg btn-primary mb-2" type="button" >
+      <i class="bi bi-google"></i>
+      Continuar com Google
+    </button> -->
+    <p class="mt-2 mb-1 text-muted text-center">
+      <span>Já se registou?!
+        <span routerLink="/login">
+          <button type="button" class="btn btn-outline-success btn-sm" routerlink="/login"><i
+              class="bi bi-box-arrow-in-right"></i> Fazer Login</button></span></span>
+    <p class="mb-1 text-muted text-center">
+      <span routerLink="/singup"><button type="button" class="btn btn-outline-secondary btn-sm"
+          routerlink="/signup"><i class="bi bi-patch-question"></i> Esqueceu a Senha?</button></span>
+    </p>
+  </form>
+</main>

@@ -1,32 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//Routing
+import { AppRoutingModule } from './app-routing.module';
+import { SharedService } from './services/shared.service';
+
+//Components
+import { NavbarComponent } from './navbar/navbar.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { ShowComponent } from './thanks/show/show.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ProfileComponent } from './profile/profile.component';
 
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { SharedService } from './shared.service';
+//Firebase
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore, Firestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { AuthService } from './services/auth.services';
+import { environment } from './environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HeaderComponent } from './header/header.component';
-
-//claro que nao devia estar nesse commit..
-//mas nao se preocupem rs
-//esta hardcoded de proposito, nao tem dados sensiveis o firebase sera apagado apos os testes
-const firebaseConfig = {
-  apiKey: "AIzaSyA1_visug15J5JxKq21OOeONets9idUsu4",
-  authDomain: "phchithanku.firebaseapp.com",
-  projectId: "phchithanku",
-  storageBucket: "phchithanku.appspot.com",
-  messagingSenderId: "474237522250",
-  appId: "1:474237522250:web:84a7c0db24c154164131b3"
-};
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,18 +37,31 @@ const firebaseConfig = {
     ThanksComponent,
     ShowComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignInComponent,
+    SignUpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    AngularFireAuthModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     NgbModule
   ],
-  providers: [SharedService],
+  providers: [SharedService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

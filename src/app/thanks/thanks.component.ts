@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SharedService} from 'src/app/shared.service';
+import {SharedService} from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-thanks',
