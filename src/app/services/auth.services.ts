@@ -9,7 +9,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  sendPasswordResetEmail
 } from '@angular/fire/auth';
+
 
 export interface Credential {
   email: string;
@@ -44,6 +46,17 @@ export class AuthService {
   logOut(): Promise<void> {
     return this.auth.signOut();
   }
+
+    // Reset password
+    async forgotPassword(email: string): Promise<void> {
+      try {
+        await sendPasswordResetEmail(this.auth, email);
+        console.log('Password reset email sent successfully');
+      } catch (error) {
+        console.error('Error sending password reset email:', error);
+        throw error;
+      }
+    }
 
   // providers
 

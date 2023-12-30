@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, Credential } from '../services/auth.services';
 import { Router } from '@angular/router';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import Validation from '../utils/validation';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { getAuth, updateProfile } from "firebase/auth";
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+  styleUrls: ['./sign-up.component.css']
 })
 
 export class SignUpComponent implements OnInit {

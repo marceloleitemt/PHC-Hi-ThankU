@@ -1,11 +1,35 @@
-<div class="min-width-sm max-width-l mb-5 mt-5">
-  <div class="card-header">
-    <h3>Welcome {{ displayName }}</h3>
-    <h3>Welcome {{ email }}</h3>
-  </div>
+<div class="container">
+  <div class="h1 text-center m-3">Perfil de Utilizador</div>
+  <div class="container container-fluid text-center">
+  <button type="button" class="btn btn-outline-secondary btn-sm mb-4"
+  (click)="logout()" routerLink="/">Fazer Logout <i class="bi bi-box-arrow-in-right"></i></button>
 </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+<form class="row g-3">
+  <div class="col-12">
+    <label for="displayName" class="form-label">Nome de Exibição</label>
+    <input type="text" class="form-control" id="displayName" value={{displayName}}
+    disabled>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control"
+    value={{email}}
+    disabled>
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4"
+    disabled>
+  </div>
 
-
-<button (click)="logout()" routerLink="/"
-   class="m-1 btn btn-light btn-outline-danger" Button>
-   <i class="bi bi-person-square"></i></button>
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-success" disabled>Atualizar</button>
+  </div>
+</form>
+</div>
+</div>
+<div class="col-3"></div>
+</div>

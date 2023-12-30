@@ -22,5 +22,4 @@ export class HomeComponent {
     this.refreshThanks();
   }
 
-
 }

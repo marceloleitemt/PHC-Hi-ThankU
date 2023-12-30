@@ -11,10 +11,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ThanksComponent } from './thanks/thanks.component';
-import { ShowComponent } from './thanks/show/show.component';
+import { CoolComponent } from './thanks/cool/cool.component';
+import { AdaptComponent } from './thanks/adapt/adapt.component';
+import { ImpactComponent } from './thanks/impact/impact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './about/about.component';
+import { AddEditComponent  } from './thanks/add-edit/add-edit.component';
 
 //Firebase
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -29,18 +33,24 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ThanksComponent,
-    ShowComponent,
     NavbarComponent,
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddEditComponent,
+    AboutComponent,
+    ForgotPasswordComponent,
+    CoolComponent,
+    AdaptComponent,
+    ImpactComponent
   ],
   imports: [
     BrowserModule,

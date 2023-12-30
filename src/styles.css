@@ -1,2 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+.phc-separator{
+  border-top: #EB0029 5px solid;
+  padding: 15px;
+  max-width: 250px;
+  text-align: center;
+  border-radius: 4px;
+}
+.phc-maxw{
+  max-width: 550px;
+}
+.phc-div{
+  margin: 70px;
+  color: #ccc;
+}
+
+.phc-card-logo{
+  position: absolute;
+  bottom: -9px;
+  left: 30px;
+  background-image: url('src/assets/imgs/phc-mini-logo-gray.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  width: 45px;
+  height: 17px;
+}
+span.phc-card-quote {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  background: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+span.phc-card-from {
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  background: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+}

@@ -13,7 +13,7 @@ import Validation from '../utils/validation';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
+  styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
   constructor(
@@ -76,6 +76,6 @@ export class SignInComponent implements OnInit {
       return;
     }
 
-    console.log('Login failed:', this.errorMessage.value);
+    // console.log('Login failed:', this.errorMessage.value);
   }
 }

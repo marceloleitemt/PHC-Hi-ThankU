@@ -1,0 +1,19 @@
+@media (max-width: 830px) {
+  #navBarHomebt {
+    display: none;
+  }
+  #profileBt  {
+    display: 100%;
+  }
+}
+@media (min-width: 831px) {
+  #navBarHomebt {
+    display: block;
+  }
+  #profileBt{
+    max-width: 300px;
+   }
+}
+button{
+  white-space: nowrap;
+}

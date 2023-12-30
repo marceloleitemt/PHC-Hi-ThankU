@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import {SharedService} from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
-  selector: 'app-thanks',
-  templateUrl: './thanks.component.html',
-  styleUrls: ['./thanks.component.css']
+  selector: 'app-impact',
+  templateUrl: './impact.component.html',
+  styleUrls: ['./impact.component.css']
 })
-
-export class ThanksComponent {
+export class ImpactComponent {
   constructor(private service:SharedService){}
 
   thankus:any=[];
@@ -19,7 +18,8 @@ export class ThanksComponent {
   }
 
   ngOnInit(){
-    this.getThanksTipo('Thank You');
+    this.getThanksTipo('Made an Impact');
   }
+
 
 }

@@ -1,0 +1,99 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
+
+
+@Component({
+  selector: 'app-add-edit',
+  templateUrl: './add-edit.component.html',
+  styleUrls: ['./add-edit.component.css']
+})
+
+export class AddEditComponent implements OnInit {
+  constructor(
+    private sharedService: SharedService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) { }
+
+  form: FormGroup = new FormGroup({
+    likes: new FormControl(''),
+    dataPost: new FormControl(''),
+    edHitech: new FormControl(''),
+    phc: new FormControl(''),
+    paraUserNo: new FormControl(''),
+    paraUtil: new FormControl(''),
+    userNo: new FormControl(''),
+    deUtil: new FormControl(''),
+    nomeUtil: new FormControl(''),
+    tipo: new FormControl(''),
+    mensagem: new FormControl('')
+  });
+
+  submitted = false;
+  errorMessage: AbstractControl = this.formBuilder.control('');
+
+  async postThanks(): Promise<void> {
+    if (this.form.invalid) return;
+
+    const thanksPara = this.form.controls['thanksPara'].value;
+    const thanksMsg = this.form.controls['thanksMsg'].value;
+
+    const newThanks = {
+      tipo: '1',
+      mensagem: thanksMsg,
+      nomeUtil: 'John Doe',
+      deUtil: 'Sender',
+      userNo: 123,
+      paraUtil: thanksPara,
+      paraUserNo: 456,
+      phc: false,
+      dataPost: new Date(),
+      edHitech: 1,
+      likes: 1
+    };
+
+    this.sharedService.addThanks(newThanks)
+      .then(() => {
+        console.log('Thanks added successfully');
+        this.router.navigate(['/']);
+      })
+      .catch((error) => {
+        console.error('Error adding thanks:', error);
+      });
+
+    this.submitted = true;
+  }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      thanksPara: ['', [Validators.required]],
+      thanksMsg: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(255),
+        ],
+      ],
+    });
+  }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  onSubmit(): void {
+    console.log(this.form.value);
+    console.log("form click");
+    this.submitted = true;
+    this.postThanks();
+
+    if (this.form.invalid) {
+      this.form.setErrors({ formInvalido: true })
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "phchi-thank-ui",
-  "version": "0.0.10",
+  "name": "phc-hi-thanku",
+  "version": "0.0.17",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

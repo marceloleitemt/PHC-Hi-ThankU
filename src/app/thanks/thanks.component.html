@@ -1,60 +1,24 @@
-<!-- Tornar componente re-usavel-->
 <div class="mx-auto">
-  <div class="d-flex justify-content-center">
-    <div class="min-width-sm max-width-l">
-
-
-      <div class="min-width-sm max-width-l mb-5 mt-5">
-        <div class="card text-center" *ngFor="let thanku of thankus">
-          <div class="card-header">
-            {{thanku.Tipo}}
+  <div class="d-flex justify-content-center mb-5">
+    <div class="min-width-sm max-width-l mt-5">
+      <div class="container min-width-sm mb-5 phc-maxw justify-content-center" *ngFor="let thanku of thankus">
+        <div class="text-center mb-2" *ngIf="thanku.USERNO !== '' && thanku.MENSAGEM !== '' && thanku.TIPO !== ''">
+          <h2 class="text-wrap fw-semibold m-0"> {{thanku.PARAUTIL}} </h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="246" height="6" viewBox="0 0 246 6" fill="none"><path d="M3 3H243" stroke="#EB0029" stroke-width="5" stroke-linecap="round"/></svg>
+          <div class="card-title mb-4">
+              <h5>{{thanku.TIPO}}</h5>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">{{thanku.Tipo}}</h5>
-            <p class="card-text">{{thanku.Mensagem}}</p>
+          <div class="card card-body">
+            <span class="phc-card-quote text-secondary">
+              <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.0992 0.799996L8.09922 21.1L6.89922 15.3C8.83255 15.3 10.4326 15.9 11.6992 17.1C12.9659 18.3 13.5992 19.9 13.5992 21.9C13.5992 23.9 12.9659 25.5333 11.6992 26.8C10.4326 28.0667 8.86589 28.7 6.99922 28.7C5.06589 28.7 3.46589 28.0667 2.19922 26.8C0.932553 25.4667 0.299219 23.8333 0.299219 21.9C0.299219 21.2333 0.332552 20.6 0.399219 20C0.532552 19.4 0.732552 18.7 0.999219 17.9C1.26589 17.0333 1.63255 16 2.09922 14.8L6.79922 0.799996H13.0992ZM31.9992 0.799996L26.9992 21.1L25.7992 15.3C27.7326 15.3 29.3326 15.9 30.5992 17.1C31.8659 18.3 32.4992 19.9 32.4992 21.9C32.4992 23.9 31.8659 25.5333 30.5992 26.8C29.3326 28.0667 27.7659 28.7 25.8992 28.7C23.9659 28.7 22.3659 28.0667 21.0992 26.8C19.8326 25.4667 19.1992 23.8333 19.1992 21.9C19.1992 21.2333 19.2326 20.6 19.2992 20C19.4326 19.4 19.6326 18.7 19.8992 17.9C20.1659 17.0333 20.5326 16 20.9992 14.8L25.6992 0.799996H31.9992Z" fill="#CCC"/></svg>
+            </span>
+            <span class="phc-card-from text-nowrap badge text-wrap text-secondary"> {{thanku.NOMEUTIL}} | {{ thanku.DATAPOST.toDate() | date:'dd/MM/yyyy'}} </span>
+            <span class="phc-card-logo"></span>
+            <p class="card-text m-4">{{thanku.MENSAGEM}}</p>
           </div>
-          <div class="card-footer text-body-secondary">
-            <a href="#" class="btn btn-danger">
-              <i class="bi bi-heart"></i>
-              Like</a> {{thanku.Likes}}
-          </div>
+          <hr class="phc-div">
         </div>
       </div>
-<!--
-        <div class="min-width-sm max-width-l mt-5">
-          <div class="card text-center">
-            <div class="card-header">
-              Thank You
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Fulano's PHC</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer text-body-secondary">
-              <a href="#" class="btn btn-danger">
-                <i class="bi bi-heart"></i>
-                Like</a> 10
-            </div>
-          </div>
-        </div>
-
-        <div class="min-width-sm max-width-L mt-5">
-          <div class="card text-center">
-            <div class="card-header">
-              Thank You
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Fulano's PHC</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer text-body-secondary">
-              <a href="#" class="btn btn-danger disabled">
-                <i class="bi bi-heart"></i>
-                Like</a> 6
-            </div>
-        </div>
-      </div> -->
-
     </div>
   </div>
 </div>

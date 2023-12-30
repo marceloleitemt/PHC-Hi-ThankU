@@ -5,8 +5,13 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ThanksComponent } from './thanks/thanks.component';
+import { AdaptComponent } from './thanks/adapt/adapt.component';
+import { CoolComponent } from './thanks/cool/cool.component';
+import { ImpactComponent } from './thanks/impact/impact.component';
 import { AddEditComponent } from './thanks/add-edit/add-edit.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './about/about.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { authGuard, publicGuard } from './guard/auth.guard';
 
 
@@ -20,6 +25,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'sobre',
+    component: AboutComponent,
   },
   {
     path: 'login',
@@ -37,8 +46,25 @@ const routes: Routes = [
     canActivate: [publicGuard],
   },
   {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
+    canActivate: [publicGuard],
+  },
+  {
     path: 'thanks',
     component: ThanksComponent
+  },
+  {
+    path: 'adapt',
+    component: AdaptComponent
+  },
+  {
+    path: 'cool',
+    component: CoolComponent
+  },
+  {
+    path: 'impact',
+    component: ImpactComponent
   },
   {
     path: 'add',
@@ -53,6 +79,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
