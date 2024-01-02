@@ -1,4 +1,12 @@
-# PHChiThankUI
+# PHC Hi, ThankU!
+![Logo](https://phchithanku.web.app/assets/imgs/hi-thankU.png)
+
+Projeto desenvolvido para praticar conceitos de desenvolvimento durante a 17ª Edição do PHC Hi, Tech. Esse projecto não tem nenhum vinculo com a Empresa PHC, apenas foi criado como forma de estudo e agradecimento pelo apoio durante o treinamento.
+
+Sinta-se a vontade para colaborar.
+
+
+## Daqui pra baixo Readme padrão do Angular CLI 😆
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
