@@ -40,7 +40,7 @@ export class SignInComponent implements OnInit {
 
     try {
       await this.authService.logInWithEmailAndPassword(credential);
-      console.log('logged in');
+      // console.log('logged in');
       this.router.navigate(['/add']);
     } catch (error) {
       // console.error('Login error:', error);

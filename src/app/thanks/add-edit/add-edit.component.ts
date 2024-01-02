@@ -64,6 +64,15 @@ export class AddEditComponent implements OnInit {
 
   }
 
+  //prevent line breaks
+  onInput(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const inputValue = inputElement.value;
+    const sanitizedValue = inputValue.replace(/(\r\n|\n|\r)/gm, '');
+    inputElement.value = sanitizedValue;
+    this.form.controls['mensagem'].setValue(sanitizedValue);
+  }
+
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
@@ -80,7 +89,7 @@ export class AddEditComponent implements OnInit {
     }
     );
     this.retrieveUserInfo().then((userInfo) => {
-      console.log("buscando user info");
+      // console.log("buscando user info");
       if (userInfo !== null) {
         this.displayName = userInfo.displayName;
         this.email = userInfo.email;
