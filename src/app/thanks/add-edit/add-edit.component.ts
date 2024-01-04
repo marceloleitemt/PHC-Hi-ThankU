@@ -16,6 +16,16 @@ export class AddEditComponent implements OnInit {
   displayName: string = "Anonimo";
   email: string = "anonimo@email.com";
   uid: string = "01010101010101010101010101010101";
+  emojiMaps : { [key: string]: string } = {
+    smile: '😀',
+    smile2: '😊',
+    pray: '🙏',
+    love: '😍',
+    heart: '❤️',
+    hug: '🤗',
+    laugh: '😂',
+    like: '👍'
+  };
 
   constructor(
     private sharedService: SharedService,
@@ -71,6 +81,13 @@ export class AddEditComponent implements OnInit {
     const sanitizedValue = inputValue.replace(/(\r\n|\n|\r)/gm, '');
     inputElement.value = sanitizedValue;
     this.form.controls['mensagem'].setValue(sanitizedValue);
+  }
+
+  //emojis
+  addEmoji(buttonId: string) {
+    const newText = this.emojiMaps[buttonId];
+    const currentText = this.form.controls['mensagem'].value;
+    this.form.controls['mensagem'].setValue(currentText + newText);
   }
 
   ngOnInit(): void {
