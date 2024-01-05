@@ -31,7 +31,7 @@
   <div class="col-12 col-md-2"></div>
   <div class="col-12 col-md-8">
 
-      <div class="d-flex justify-content-center m-3">
+      <div class="d-flex justify-content-center m-3 mb-0">
         <div class="input-group mb-3 w-100 w-md-75 w-lg-50">
           <span class="input-group-text">De:</span>
           <input type="text" class="form-control" id="nomeUtil" value={{displayName}} disabled readonly>
@@ -40,22 +40,30 @@
                 data-bs-toggle="tooltip"
                 data-bs-title="Default tooltip"
                 data-bs-placement="top"
-                placeholder="Albertino Maciel 😅"
+                placeholder=""
                 [ngClass]="{ 'is-invalid': submitted && f['thanksPara'].errors }" #thanksPara required
                 aria-label="thanksPara">
+                <div *ngIf="submitted && f['thanksPara'].errors" class="alert alert-warning m-3">
+                  Para quem irá o ThankU? 😉
+                </div>
         </div>
       </div>
+      <div class="row align-items-center">
+        <div class="col-12 col-md-10">
+            <label for="mensagem" class="form-label"></label>
+            <textarea class="form-control text-center" formControlName="mensagem" id="mensagem"
+            [ngClass]="{ 'is-invalid': submitted && f['mensagem'].errors }"
+            (input)="onInput($event)" #thanksPara required
+            placeholder="Escreva seu ThankU aqui :)" rows="5" maxlength="255" ></textarea>
+          </div>
 
-      <div class="d-flex justify-content-center">
-        <label for="mensagem" class="form-label"></label>
-        <textarea class="form-control text-center" formControlName="mensagem" id="mensagem"
-        [ngClass]="{ 'is-invalid': submitted && f['mensagem'].errors }"
-        (input)="onInput($event)" #thanksPara required
-        placeholder="Escreva seu ThankU aqui :)" rows="5"></textarea>
-        <button class="m-3 btn btn-success" type="submit">
-          POST <i class="bi bi-rocket-takeoff"></i>
-        </button>
-      </div>
+          <div class="col-12 col-md-2">
+          <button class="m-3 btn btn-success btn-lg" type="submit">
+            POST <i class="bi bi-rocket-takeoff"></i>
+          </button>
+          </div>
+        </div>
+
       <div class="justify-content-center input-group m-2 w-100 w-md-75 w-lg-50">
           <a class="btn btn-light m-1" (click)="addEmoji('like')">👍</a>
           <a class="btn btn-light m-1" (click)="addEmoji('heart')">❤️</a>
@@ -68,10 +76,7 @@
       </div>
 
       <div *ngIf="submitted && f['mensagem'].errors" class="alert alert-warning m-3" role="alert">
-        Escreva uma mensagem de ThankU 😁
-      </div>
-      <div *ngIf="submitted && f['thanksPara'].errors" class="alert alert-warning m-3" role="alert">
-        Para quem irá o ThankU? Por favor escreva o nome. 😉
+        Escreva uma mensagem de ThankU. Máximo de 255 caracteres 😁
       </div>
 
     </div>
