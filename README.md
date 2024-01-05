@@ -1,10 +1,11 @@
 # PHC Hi, ThankU!
 ![Logo](https://phchithanku.web.app/assets/imgs/hi-thankU.png)
 
-Projeto desenvolvido para praticar conceitos de desenvolvimento durante a 17ª Edição do PHC Hi, Tech. Esse projecto não tem nenhum vinculo com a Empresa PHC, apenas foi criado como forma de estudo e agradecimento pelo apoio durante o treinamento.
+Projeto desenvolvido para praticar conceitos de desenvolvimento durante a 17ª Edição do PHC Hi, Tech. [Ideias e Melhorias disponíveis no projeto](https://github.com/users/marceloleitemt/projects/1)
 
-Sinta-se a vontade para colaborar.
+Esse projecto foi criado apenas como forma de estudo e agradecimento pelo apoio durante o treinamento e não tem nenhum vínculo formal com a Empresa PHC Software Portugal. Nosso muito obrigado por manterem um programa de tão alto nível.
 
+Sinta-se a vontade para [colaborar](https://github.com/users/marceloleitemt/projects/1)
 
 ## Daqui pra baixo Readme padrão do Angular CLI 😆
 
