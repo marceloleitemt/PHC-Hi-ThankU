@@ -54,4 +54,27 @@ export class SharedService {
     return deleteDoc(docRef);
   }
 
+  //busca para quem vai o thankus
+  getThanksParaUtil(paraUtil:string){
+    let thanksCollection = collection(this.fs, 'ThankUs');
+    let filteredAndOrderedQuery = query(
+      thanksCollection,
+      where('PARAUTIL', '>=', paraUtil),
+      where('PARAUTIL', '<=', paraUtil + '\uf8ff')
+    );
+
+    return collectionData(filteredAndOrderedQuery, { idField: 'id' });
+  }
+
+  //retornando nome de todos que receberam thankus
+  getThanksParaUtilAll(){
+    let thanksCollection = collection(this.fs, 'ThankUs');
+    let filteredAndOrderedQuery = query(
+      thanksCollection,
+      where('PARAUTIL', '>', '')
+    );
+
+    return collectionData(filteredAndOrderedQuery, { idField: 'id' });
+  }
+
 }

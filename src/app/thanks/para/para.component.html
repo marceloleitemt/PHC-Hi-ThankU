@@ -1,5 +1,14 @@
-<app-para></app-para>
-<!-- <div class="mx-auto">
+<div class="row">
+  <div class="col-12 col-md-4"></div>
+  <div class="col-12 col-md-4">
+<select class="form-select border-danger mt-3 text-center fw-semibold" (change)="getThanksParaUtil($event)">
+  <option class="fw-semibold" selected value="">VER TODOS</option>
+  <option class="fw-semibold" *ngFor="let paraUtil of paraUtils" [value]="paraUtil">{{paraUtil}}</option>
+</select>
+</div>
+<div class="col-12 col-md-4"></div>
+</div>
+<div class="mx-auto">
   <div class="d-flex justify-content-center mb-5">
     <div class="min-width-sm max-width-l mt-5">
       <div class="container min-width-sm mb-5 phc-maxw justify-content-center" *ngFor="let thanku of thankus">
@@ -22,4 +31,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

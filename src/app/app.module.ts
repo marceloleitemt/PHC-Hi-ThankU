@@ -34,6 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ParaComponent } from './thanks/para/para.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ForgotPasswordComponent,
     CoolComponent,
     AdaptComponent,
-    ImpactComponent
+    ImpactComponent,
+    ParaComponent
   ],
   imports: [
     BrowserModule,
