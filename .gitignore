@@ -40,10 +40,11 @@ testem.log
 
 #firebase
 /.firebase
+/.firebase/*
 
 # System files
 .DS_Store
 Thumbs.db
 
-#env a base/projeto sera apagado em breve
+#env chave do firebase fale com o desenvolvedor
 /src/app/environments/environment.default.ts

@@ -1,6 +1,6 @@
 @media (max-width: 830px) {
   #navBarHomebt {
-    display: none;
+    min-width: 100%;
   }
   #profileBt  {
     display: 100%;
