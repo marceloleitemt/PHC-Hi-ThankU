@@ -47,4 +47,4 @@ testem.log
 Thumbs.db
 
 #env chave do firebase fale com o desenvolvedor
-/src/app/environments/environment.default.ts
+src/app/environments/environment.default.ts
